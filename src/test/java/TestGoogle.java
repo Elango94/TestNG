@@ -2,6 +2,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -22,11 +23,13 @@ public class TestGoogle {
 
     @BeforeSuite
     public void driverInit() {
-        driver = new FirefoxDriver();
+
+        driver = new ChromeDriver();
     }
-    public void setUp(){
+
+    public void setUp() {
         ExtentSparkReporter reporter = new ExtentSparkReporter("D:/IntelliiJ/Code/SeleniumMaven/TestNG/test-output/extent-report");
-        extentReports=new ExtentReports();
+        extentReports = new ExtentReports();
         extentReports.attachReporter(reporter);
         extentTest.warning("a");
 
@@ -46,7 +49,8 @@ public class TestGoogle {
     public void driverEnd() {
         driver.close();
     }
-    public void tearDown(){
+
+    public void tearDown() {
         extentReports.flush();
     }
 

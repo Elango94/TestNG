@@ -1,5 +1,5 @@
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -17,7 +17,7 @@ public class TestGoogle1 {
 
     @BeforeSuite
     public void driverInit() {
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
 
     }
 
